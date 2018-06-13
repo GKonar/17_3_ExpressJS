@@ -20,6 +20,7 @@ app.post('/updateNote/:note', function(req, res) {
 		if (err) throw err;
 		fs.writeFile('test.json', (data + req.params.note), function(err) {
 			if (err) throw err;
+			res.send(data)
 			console.log('File updated');
         })
 	});
